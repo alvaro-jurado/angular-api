@@ -1,0 +1,99 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="flex justify-center">
+        <div class="flex flex-col bg-gray-200 w-1/2 p-4 rounded">
+
+            <label for="refNum" class="mb-2 w-full">Nº de referencia</label>
+            @if(productForm.get("refNum")?.touched && productForm.get("refNum")?.value == '' ||
+            productForm.get("refNum")?.value
+            == null) {
+            <span class="text-red-500 mb-4">This field is required *</span>
+            }
+
+            <input class="rounded p-1 mb-4 w-full" type="text" id="refNum" formControlName="refNum" required>
+
+            <label for="productName" class="mb-2 w-full">Nombre del Producto</label>
+            @if(productForm.get("productName")?.errors)
+            {
+            @if(productForm.get("productName")?.touched && productForm.get("refNum")?.value == '' ||
+            productForm.get("productName")?.value
+            == null){
+            <span class="text-red-500 mb-4">
+                This field is required *
+            </span>
+            }
+            @if(productForm.get("productName")?.touched && productForm.get("productName")?.value
+            !=null && productForm.get("productName")!.value.length < 3){ <span class="text-red-500 mb-4">
+                Name too short *
+                </span>
+                }
+                @if(productForm.get("productName")?.value
+                !=null && productForm.get("productName")!.value.length > 15){
+                <span class="text-red-500 mb-4">
+                    Name too long *
+                </span>
+                }
+                }
+                <input class="rounded p-1 mb-4 w-full" type="text" id="productName" formControlName="productName"
+                    required>
+
+                <label for="price" class="mb-2 w-full">Precio</label>
+                @if(productForm.get("price")?.errors)
+                {
+                @if(productForm.get("price")?.touched && productForm.get("price")?.value === '' ||
+                productForm.get("price")?.value === null){
+
+                <span class="text-red-500 mb-4">
+                    This field is required *
+                </span>
+                }
+                @if(productForm.get("price")?.touched && productForm.get("price")?.value
+                !=null && productForm.get("price")!.value < 1){ <span class="text-red-500 mb-4">
+                    Field can't be negative *
+                    </span>
+                    }
+                    @if(productForm.get("price")?.value
+                    !=null && productForm.get("price")!.value > 999){
+                    <span class="text-red-500 mb-4">
+                        Price can't be bigger than 999 *
+                    </span>
+                    }
+                    }
+                    <input class="rounded p-1 mb-4 w-full" type="number" id="price" formControlName="price" required>
+
+                    <label for="productCategory" class="mb-2 w-full">Categoría</label>
+                    @if(productForm.get("productCategory")?.touched && productForm.get("productCategory")?.value == '')
+                    {
+                    <span class="text-red-500 mb-4">
+                        This field is required *
+                    </span>
+                    }
+                    <select class="rounded p-1 mb-4 w-full" id="productCategory" formControlName="productCategory"
+                        required>
+                        <option value="">Seleccionar Categoría</option>
+                        <option value="colored">Con Color</option>
+                        <option value="notColored">Sin Color</option>
+                    </select>
+
+                    <div class="flex flex-row mb-4">
+                        <label for="available">Disponible</label>
+                        <input class="justify-start rounded p-1 ml-2" type="checkbox" id="available"
+                            formControlName="available">
+                    </div>
+
+
+                    <label for="imgLink" class="mb-2 w-full">Enlace de la imagen</label>
+                    @if(productForm.get("imgLink")?.touched && productForm.get("imgLink")?.value == '') {
+                    <span class="text-red-500 mb-4">
+                        This field is required *
+                    </span>
+                    }
+                    <input class="rounded p-1 mb-4 w-full" type="text" id="imgLink" formControlName="imgLink" required>
+
+                    <div class="flex justify-end">
+                        <button type="submit"
+                            class="text-white w-20 rounded p-2 bg-gray-700 hover:bg-gray-800 transition duration-200 ease-in-out cursor-pointer"
+                            [disabled]="productForm.invalid">Enviar</button>
+                    </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,29 @@
+<div class="flex flex-col">
+    <div [style.background-color]="selectedColor"
+        class="flex flex-row flex-wrap bg-white justify-between items-center shadow-lg p-2 border transition duration-300 ease-in-out">
+        <div class="ml-2">
+            <img src="../../../favicon.ico" alt="logo">
+        </div>
+        <div class="flex flex-row lg:hidden">
+            <button
+            class="text-lg sidebar-field sub-sidebar-field w-full text-left inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:bg-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
+            routerLink="/home" routerLinkActive="active-link">
+            <p class="material-symbols-outlined text-3xl ml-2 mr-2">home</p>
+            <p class="sidebar-text">Home</p>
+        </button>
+        <button
+            class="text-lg sidebar-field sub-sidebar-field w-full text-left inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:bg-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
+            routerLink="/products" routerLinkActive="active-link">
+            <p class="material-symbols-outlined text-3xl ml-2 mr-2">draw</p>
+            <p class="sidebar-text">Productos</p>
+        </button>
+        <button
+            class="text-lg sidebar-field sub-sidebar-field w-full text-left inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:bg-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
+            routerLink="/admin" routerLinkActive="active-link">
+            <p class="material-symbols-outlined text-3xl ml-2 mr-2">admin_panel_settings</p>
+            <p class="sidebar-text">Administrador</p>
+        </button>
+        </div>
+        
+    </div>
+</div>

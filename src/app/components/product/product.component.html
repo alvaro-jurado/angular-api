@@ -1,0 +1,53 @@
+<!--<div class="flex flex-row justify-center p-4 select-none">
+    <img src="{{productToShow?.imgLink }}" alt="{{ productToShow?.productName }}" class="h-80 rounded mr-4">
+
+    <div class="flex flex-col">
+        <div class="flex flex-row">
+            <h1 class="font-semibold text-4xl"> {{ productToShow?.productName }} </h1>
+            @if(productToShow?.productCategory == 'colored'){
+            <span class="text-gray-500 text-sm mt-4 ml-2">(Con color)</span>
+            }
+            @else if(productToShow?.productCategory == 'notColored'){
+            <span class="text-gray-500 text-sm mt-4 ml-2">(Sin color)</span>
+            }
+            @else{
+            <span class="text-blue-500 text-sm mt-4 ml-2">({{productToShow?.productCategory}})</span>
+            }
+        </div>
+
+        <h2 class="text-2xl mt-2"> {{ productToShow?.price }} € </h2>
+        @if(productToShow?.available){
+        <span class="text-green-500">Disponible</span>
+        }
+        @else if(!productToShow?.available){
+        <span class="text-red-500">Agotado</span>
+        }
+        @else{
+        <span class="text-blue-500">{{productToShow?.available}}</span>
+        }
+        <div class="flex flex-col justify-center items-end mt-auto">
+            <div class="flex flex-row mt-6 justify-center">
+                <button
+                    class="flex rounded-full bg-gray-500 w-10 h-10 text-white text-2xl items-center justify-center shadow-lg hover:bg-gray-600 transition duration-200 ease-in-out"
+                    (click)="decrementCounter()">
+                    <span class="mb-1">-</span>
+                </button>
+
+                <p class="px-6 py-2">{{ counter }}</p>
+
+                <button
+                    class="flex rounded-full bg-gray-500 w-10 h-10 text-white text-2xl items-center justify-center shadow-lg hover:bg-gray-600 transition duration-200 ease-in-out"
+                    (click)="incrementCounter()">
+                    <span class="mb-1">+</span>
+                </button>
+            </div>
+
+            <button class="flex mt-4 bg-gray-500 justify-center items-center p-4 text-white rounded shadow-lg hover:bg-gray-600 transition duration-200 ease-in-out" (click)="addToCart()">
+                Añadir al carrito
+                <span class="material-symbols-outlined ml-2">shopping_cart</span>
+            </button>
+        </div>
+    </div>
+
+
+</div>-->

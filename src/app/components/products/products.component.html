@@ -1,0 +1,37 @@
+<div class="flex flex-wrap justify-center select-none">
+    @for(product of productList; track $index) {
+
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out mx-2 my-4 p-4 w-3/12 cursor-pointer"
+        [routerLink]="['/product-details', product.refNum]" routerLinkActive="active-link">
+        <img class="rounded w-full h-56" src="{{product.imgLink}}" alt="Img">
+        <h2 class="text-lg font-semibold mt-2">{{product.productName}}</h2>
+        <p class="text-gray-600 mb-2">{{product.price}} €</p>
+        <p class="text-gray-500">
+            @if(product.productCategory == 'colored'){
+            <span class="text-gray-500">Con color</span>
+            }
+
+            @else if(product.productCategory == 'notColored'){
+            <span class="text-gray-500">Sin color</span>
+            }
+
+            @else{
+            <span class="text-blue-500">{{product.productCategory}}</span>
+            }
+        </p>
+        <p class="text-gray-500">
+            @if(product.available){
+            <span class="text-green-500">Disponible</span>
+            }
+
+            @else if(!product.available){
+            <span class="text-red-500">Agotado</span>
+            }
+
+            @else{
+            <span class="text-blue-500">{{product.available}}</span>
+            }
+        </p>
+    </div>
+    }
+</div>
